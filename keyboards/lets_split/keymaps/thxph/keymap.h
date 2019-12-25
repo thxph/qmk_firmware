@@ -22,6 +22,9 @@
 #define TG_RAIS TG(_RAISE)
 #define TG_CTRL TG(_CONTROL)
 
+#define LT_LSPC LT(_LOWER, KC_SPACE)
+#define LT_RENT LT(_RAISE, KC_ENTER)
+
 
 enum custom_keycodes {
   ON_BASE = SAFE_RANGE,

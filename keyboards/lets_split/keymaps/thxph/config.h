@@ -1,0 +1,20 @@
+#pragma once
+
+#define USE_I2C
+
+#define QMK_ESC_OUTPUT F6
+#define QMK_ESC_INPUT D7
+
+#undef RGBLED_NUM
+#define RGBLED_NUM 8
+#define RGBLED_SPLIT { 4, 4 }
+#undef RGB_DI_PIN
+#define RGB_DI_PIN D5
+#define RGBLIGHT_ANIMATIONS
+
+#define SPLIT_HAND_PIN F0
+
+#define TAPPING_TERM 175
+#define TAPPING_TOGGLE 3
+#define PERMISSIVE_HOLD
+#define IGNORE_MOD_TAP_INTERRUPT
