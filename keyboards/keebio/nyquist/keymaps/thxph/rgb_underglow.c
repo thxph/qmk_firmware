@@ -16,6 +16,10 @@ void handle_layer_changes(layer_state_t state) {
       break;
     case _LAY1:
       rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING+1);
+      rgblight_sethsv_noeeprom(HSV_AZURE);
+      break;
+    case _FUNCTION:
+      rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING+1);
       rgblight_sethsv_noeeprom(HSV_GOLDENROD);
       break;
     case _BASE:

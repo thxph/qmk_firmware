@@ -7,6 +7,7 @@
 #define _LAY1 1
 #define _LOWER 2
 #define _RAISE 3
+#define _FUNCTION 4
 #define _CONTROL 9
 #define _CONFIG 15
 
