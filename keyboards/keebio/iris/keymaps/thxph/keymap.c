@@ -17,7 +17,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* KC_LGUI, KC_LALT, KC_LCTL, KC_LALT, TT_LOWR, KC_SPC ,    KC_ENT , TT_RAIS, LCA_T(KC_TAB), KC_RALT, TD_CTRL, KC_LEAD \ */
 
 [_BASE] = LAYOUT( \
-  KC_GRV , KC_9   , KC_7   , KC_1   , KC_3   , KC_5   ,                     KC_4   , KC_2   , KC_0   , KC_6   , KC_8   , KC_MINS, \
+  C(KC_C), C(KC_X), KC_COLN, KC_TAB , A(KC_X), C(KC_U),                     C(KC_H), KC_2   , KC_DEL , C(KC_E), C(KC_K), C(KC_G), \
   TABHYPR, KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   ,                     KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , KC_QUOT, \
   ESCLCTL, KC_A   , KC_S   , KC_D   , KC_F   , KC_G   ,                     KC_H   , KC_J   , KC_K   , KC_L   , SCLNALT, BSPCCTL, \
   KC_LSFT, MT_ZGUI, KC_X   , KC_C   , KC_V   , KC_B   , _______,   _______, KC_N   , KC_M   , KC_COMM, KC_DOT , SLSHGUI, KC_RSFT, \
@@ -119,4 +119,63 @@ layer_state_t layer_state_set_user(layer_state_t state) {
   #endif
 
   return state;
+}
+
+void encoder_update_user(uint8_t index, bool clockwise) {
+  switch (get_highest_layer(layer_state)) {
+    case _CONTROL:
+      break;
+    case _RAISE:
+    if (index == 0) {
+        if (clockwise) {
+            tap_code(KC_RIGHT);
+        } else {
+            tap_code(KC_LEFT);
+        }
+    }
+    else if (index == 1) {
+        if (clockwise) {
+            tap_code(KC_PGDN);
+        } else {
+            tap_code(KC_PGUP);
+        }
+    }
+      break;
+    case _LOWER:
+    if (index == 0) {
+        if (clockwise) {
+            tap_code(KC_RIGHT);
+        } else {
+            tap_code(KC_LEFT);
+        }
+    }
+    else if (index == 1) {
+        if (clockwise) {
+            tap_code(KC_PGDN);
+        } else {
+            tap_code(KC_PGUP);
+        }
+    }
+      break;
+    case _LAY1:
+      break;
+    case _FUNCTION:
+      break;
+    case _BASE:
+    if (index == 0) {
+        if (clockwise) {
+            tap_code(KC_DOWN);
+        } else {
+            tap_code(KC_UP);
+        }
+    }
+    else if (index == 1) {
+        if (clockwise) {
+            tap_code(KC_PGDN);
+        } else {
+            tap_code(KC_PGUP);
+        }
+    }
+      break;
+  }
 }
