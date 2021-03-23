@@ -36,9 +36,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_LCTL, KC_LGUI, TT_CTRL, KC_LALT, TT_LOWR, KC_SPC , KC_ENT , TT_RAIS, KC_RALT, TD_CTRL, KC_RGUI, KC_RCTL  ),
 
 [_LOWER] = LAYOUT_planck_grid( \
-  TABHYPR, KC_MINS, KC_5   , KC_4   , KC_3   , KC_DOT , KC_PGUP, KC_HOME, KC_END , KC_PGDN, KC_INS , KC_DEL , \
+  TABHYPR, KC_MINS, KC_5   , KC_4   , KC_3   , KC_COMM, KC_PGUP, KC_HOME, KC_END , KC_PGDN, KC_INS , KC_DEL , \
   ESCLCTL, KC_GRV , KC_2   , KC_1   , KC_0   , KC_9   , KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, _______, _______, \
-  KC_LSFT, KC_TILD, KC_8   , KC_7   , KC_6   , KC_COMM, KC_F13 , KC_F14 , KC_F15 , KC_F16 , KC_F17 , KC_RSFT, \
+  KC_LSFT, KC_TILD, KC_8   , KC_7   , KC_6   , KC_DOT , KC_F13 , KC_F14 , KC_F15 , KC_F16 , KC_F17 , KC_RSFT, \
   KC_LCTL, KC_LGUI, TT_CTRL, KC_LALT, TT_LOWR, KC_SPC , KC_ENT , TT_RAIS, KC_RALT, TD_CTRL, KC_RGUI, KC_RCTL  ),
 
 [_RAISE] = LAYOUT_planck_grid( \
@@ -55,14 +55,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_CONTROL] = LAYOUT_planck_grid( \
   KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  , KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10 , KC_F11 , KC_F12 , \
-  ESCLCTL, DF_BASE, DF_GAME, DF_WINX, DF_CTRL, _______, _______, _______, _______, _______, RGBEMOD, RGBETOG, \
-  KC_LSFT, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
+  KC_F13 , KC_F14 , KC_F15 , KC_F16 , KC_F17 , KC_F18 , KC_F19 , KC_F20 , KC_F21 , KC_F22 , KC_F23 , KC_F24 , \
+  KC_LSFT, DF_BASE, DF_GAME, DF_WINX, DF_CTRL, _______, _______, _______, _______, _______, _______, RGBETOG, \
   KC_LCTL, KC_LGUI, TT_CTRL, KC_LALT, TT_LOWR, KC_SPC , KC_ENT , TT_RAIS, KC_RALT, TD_CTRL, KC_RGUI, KC_RCTL  ),
 
 [_CONFIG] = LAYOUT_planck_grid( \
-  TABHYPR, _______, KC_F5  , KC_F4  , KC_F3  , KC_F12 , _______, _______, _______, _______, _______, RESET  , \
-  ESCLCTL, _______, KC_F2  , KC_F1  , KC_F10 , KC_F9  , _______, _______, _______, _______, _______, _______, \
-  KC_LSFT, _______, KC_F8  , KC_F7  , KC_F6  , KC_F11 , _______, _______, _______, _______, _______, _______, \
+  RGBETOG, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, RESET  , \
+  ESCLCTL, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
+  KC_LSFT, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
   KC_LCTL, KC_LGUI, TT_CTRL, KC_LALT, TT_LOWR, KC_SPC , KC_ENT , TT_RAIS, KC_RALT, TD_CTRL, KC_RGUI, KC_RCTL  ),
 };
 

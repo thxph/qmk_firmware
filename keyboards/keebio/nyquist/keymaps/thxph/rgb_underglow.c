@@ -14,18 +14,25 @@ void handle_layer_changes(layer_state_t state) {
       rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING+2);
       rgblight_sethsv_noeeprom(HSV_RED);
       break;
-    case _LAY1:
-      rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING+1);
-      rgblight_sethsv_noeeprom(HSV_AZURE);
-      break;
     case _FUNCTION:
       rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING+1);
-      rgblight_sethsv_noeeprom(HSV_GOLDENROD);
-      break;
-    case _BASE:
       rgblight_sethsv_noeeprom(HSV_BLUE);
-      rgblight_mode_noeeprom(RGBLIGHT_MODE_RAINBOW_SWIRL+4);
       break;
+    default:
+      switch (biton32(default_layer_state)) {
+      case _BASE:
+        rgblight_sethsv_noeeprom(HSV_BLUE);
+        rgblight_mode_noeeprom(RGBLIGHT_MODE_RAINBOW_SWIRL+4);
+        break;
+      case _GAME:
+        rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING+1);
+        rgblight_sethsv_noeeprom(HSV_GOLDENROD);
+        break;
+      case _WINX:
+        rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING+1);
+        rgblight_sethsv_noeeprom(HSV_AZURE);
+        break;
+    }
   }
 }
 
