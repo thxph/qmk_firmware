@@ -14,12 +14,18 @@
 #define _CONTROL 9
 #define _CONFIG 15
 
+#define DF_BASE DF(_BASE)
+#define DF_GAME DF(_GAME)
+#define DF_WINX DF(_WINX)
+#define DF_CTRL DF(_CONTROL)
+
 #define MO_LOWR MO(_LOWER)
 #define MO_RAIS MO(_RAISE)
 #define MO_CTRL MO(_CONTROL)
 
 #define TT_LOWR TT(_LOWER)
 #define TT_RAIS TT(_RAISE)
+#define TT_CTRL TT(_CONTROL)
 
 #define TG_GAME TG(_GAME)
 #define TG_WINX TG(_WINX)
