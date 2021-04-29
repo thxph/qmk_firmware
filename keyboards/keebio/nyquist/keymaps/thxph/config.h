@@ -1,6 +1,6 @@
 #pragma once
 
-#define USE_I2C
+#define USE_SERIAL
 
 #define RGBLIGHT_ANIMATIONS
 
