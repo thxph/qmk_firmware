@@ -36,122 +36,125 @@
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-	[_BASE] = LAYOUT_moonlander( \
-			C(KC_C), C(KC_X), KC_COLN, KC_TAB , A(KC_X), C(KC_U), _______,   _______, C(KC_H), KC_2   , KC_DEL , C(KC_E), C(KC_K), C(KC_G), \
-			TABHYPR, KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   , _______,   _______, KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , KC_QUOT, \
-			ESCLCTL, KC_A   , KC_S   , KC_D   , KC_F   , KC_G   , _______,   _______, KC_H   , KC_J   , KC_K   , KC_L   , SCLNALT, BSPCCTL, \
-			KC_LSFT, MT_ZGUI, KC_X   , KC_C   , KC_V   , KC_B   ,                     KC_N   , KC_M   , KC_COMM, KC_DOT , SLSHGUI, KC_RSFT, \
-			_______, _______, _______, _______, TT_LOWR,          _______,   _______,          TT_RAIS, _______, TD_CTRL, _______, _______, \
-			                           KC_SPC , _______, KC_LALT,                     _______, _______, KC_ENT                              ),
+    [_BASE] = LAYOUT_moonlander( \
+            KC_GRV , KC_1   , KC_2   , KC_3   , KC_4   , KC_5   , _______,   _______, KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , KC_MINS, \
+            TABLALT, KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   , _______,   _______, KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , QUOTALT, \
+            ESCLCTL, KC_A   , KC_S   , KC_D   , KC_F   , KC_G   , _______,   _______, KC_H   , KC_J   , KC_K   , KC_L   , KC_SCLN, BSPCCTL, \
+            KC_LSFT, MT_ZGUI, KC_X   , KC_C   , KC_V   , KC_B   ,                     KC_N   , KC_M   , KC_COMM, KC_DOT , SLSHGUI, KC_RSFT, \
+            _______, _______, _______, TT_L2  , TT_L1  ,          _______,   _______,          TT_R1  , _______, _______, _______, _______, \
+            KC_SPC , _______, _______,                     _______, _______, KC_ENT                              ),
 
-	[_LAY1] = LAYOUT_moonlander( \
-			KC_GRV , KC_9   , KC_7   , KC_1   , KC_3   , KC_5   , _______,   _______, KC_4   , KC_2   , KC_0   , KC_6   , KC_8   , KC_MINS, \
-			TABHYPR, KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   , _______,   _______, KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , KC_QUOT, \
-			ESCLCTL, KC_A   , KC_S   , KC_D   , KC_F   , KC_G   , _______,   _______, KC_H   , KC_J   , KC_K   , KC_L   , KC_SCLN, _______, \
-			KC_LSFT, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   ,                     KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, KC_RSFT, \
-			_______, _______, _______, _______, TT_LOWR,          _______,   _______,          TT_RAIS, _______, TD_CTRL, _______, _______, \
-			                           KC_SPC , _______, KC_LALT,                     _______, _______, KC_ENT                              ),
+    [_B1] = LAYOUT_moonlander( \
+            KC_TRNS, _______, _______, _______, _______, _______, _______,   _______, _______, _______, _______, _______, _______, _______, \
+            KC_TRNS, _______, _______, _______, _______, _______, _______,   _______, _______, _______, _______, _______, _______, _______, \
+            KC_TRNS, _______, _______, _______, _______, _______, _______,   _______, _______, _______, _______, _______, _______, _______, \
+            KC_TRNS, KC_Z   , _______, _______, _______, _______,                     _______, _______, _______, _______, KC_SLSH, _______, \
+            KC_TRNS, _______, _______, _______, _______,          _______,   _______,          _______, _______, _______, _______, _______, \
+            _______, _______, _______,                     _______, _______, _______                             ),
 
-	[_LOWER] = LAYOUT_moonlander( \
-			KC_GRV , KC_9   , KC_7   , KC_1   , KC_3   , KC_5   , _______,   _______, KC_4   , KC_2   , KC_0   , KC_6   , KC_8   , KC_MINS, \
-			TABHYPR, _______, KC_5   , KC_4   , KC_3   , _______, _______,   _______, KC_PGUP, KC_HOME, KC_END , KC_PGDN, KC_INS , KC_DEL , \
-			ESCLCTL, KC_GRV , KC_2   , KC_1   , KC_0   , KC_9   , _______,   _______, KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, _______, _______, \
-			KC_LSFT, KC_TILD, KC_8   , KC_7   , KC_6   , _______,                     _______, KC_MINS, _______, _______, _______, KC_RSFT, \
-			_______, _______, _______, _______, TT_LOWR,          _______,   _______,          TT_RAIS, _______, TD_CTRL, _______, _______, \
-			                           KC_SPC , _______, KC_LALT,                     _______, _______, KC_ENT                              ),
+    [_L1] = LAYOUT_moonlander( \
+            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
+            KC_TRNS, _______, KC_5   , KC_4   , KC_3   , _______, KC_TRNS,   KC_TRNS, KC_PGUP, KC_HOME, KC_END , KC_PGDN, KC_INS , KC_TRNS ,\
+            KC_TRNS, KC_GRV , KC_2   , KC_1   , KC_0   , KC_9   , KC_TRNS,   KC_TRNS, KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, KC_DEL , KC_TRNS, \
+            KC_TRNS, KC_TILD, KC_8   , KC_7   , KC_6   , _______,                     _______, _______, _______, _______, _______, KC_TRNS, \
+            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS,   KC_TRNS,          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
+            KC_TRNS, KC_TRNS, KC_TRNS,                     KC_TRNS, KC_TRNS, KC_TRNS                            ),
 
-	[_RAISE] = LAYOUT_moonlander( \
-			KC_GRV , KC_9   , KC_7   , KC_1   , KC_3   , KC_5   , _______,   _______, KC_4   , KC_2   , KC_0   , KC_6   , KC_8   , KC_MINS, \
-			TABHYPR, KC_GRV , KC_LT  , KC_GRV , KC_GT  , KC_EXLM, _______,   _______, KC_AT  , KC_LBRC, KC_MINS, KC_RBRC, KC_MINS, KC_DEL , \
-			ESCLCTL, KC_BSLS, KC_LCBR, KC_EQL , KC_RCBR, KC_HASH, _______,   _______, KC_UNDS, KC_LPRN, KC_DQT , KC_RPRN, KC_COLN, _______, \
-			KC_LSFT, KC_PERC, KC_EXLM, KC_PLUS, KC_TILD, KC_CIRC,                     KC_AMPR, KC_ASTR, KC_DLR , KC_PIPE, KC_QUES, KC_RSFT, \
-			_______, _______, _______, _______, TT_LOWR,          _______,   _______,          TT_RAIS, _______, TD_CTRL, _______, _______, \
-			                           KC_SPC , _______, KC_LALT,                     _______, _______, KC_ENT                              ),
+    [_R1] = LAYOUT_moonlander( \
+            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
+            TABLALT, _______, KC_LT  , KC_EQL , KC_GT  , KC_EXLM, _______,   _______, KC_AT  , KC_LBRC, KC_MINS, KC_RBRC, _______, KC_TRNS , \
+            ESCLCTL, _______, KC_LCBR, KC_QUOT, KC_RCBR, KC_HASH, _______,   _______, KC_UNDS, KC_LPRN, KC_DQT , KC_RPRN, _______, KC_TRNS, \
+            KC_LSFT, KC_PERC, KC_EXLM, KC_PLUS, KC_TILD, KC_CIRC,                     KC_AMPR, KC_ASTR, KC_DLR , KC_PIPE, KC_BSLS, KC_TRNS, \
+            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS,   KC_TRNS,          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
+            KC_TRNS, KC_TRNS, KC_TRNS,                     KC_TRNS, KC_TRNS, KC_TRNS                            ),
 
-	[_FUNCTION] = LAYOUT_moonlander( \
-			KC_GRV , KC_9   , KC_7   , KC_1   , KC_3   , KC_5   , _______,   _______, KC_4   , KC_2   , KC_0   , KC_6   , KC_8   , KC_MINS, \
-			TABHYPR, _______, KC_F5  , KC_F4  , KC_F3  , KC_F12 , _______,   _______, _______, _______, _______, _______, _______, KC_DEL , \
-			ESCLCTL, _______, KC_F2  , KC_F1  , KC_F10 , KC_F9  , _______,   _______, _______, KC_RCTL, KC_RALT, _______, _______, _______, \
-			KC_LSFT, KC_LCTL, KC_F8  , KC_F7  , KC_F6  , KC_F11 ,                     _______, _______, _______, _______, _______, _______, \
-			_______, _______, _______, _______, TT_LOWR,          _______,   _______,          TT_RAIS, _______, TD_CTRL, _______, _______, \
-			                           KC_SPC , _______, KC_LALT,                     _______, _______, KC_ENT                              ),
+    [_L2] = LAYOUT_moonlander( \
+            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
+            KC_TRNS, _______, KC_F5  , KC_F4  , KC_F3  , KC_F11 , _______,   _______, _______, _______, _______, _______, _______, _______, \
+            KC_TRNS, _______, KC_F2  , KC_F1  , KC_F10 , KC_F9  , _______,   _______, _______, _______, _______, _______, _______, _______, \
+            KC_TRNS, _______, KC_F8  , KC_F7  , KC_F6  , KC_F12 ,                     _______, _______, _______, _______, _______, _______, \
+            KC_TRNS, _______, _______, _______, _______,          _______,   _______,          _______, _______, _______, _______, _______, \
+            _______, _______, _______,                     _______, _______, _______                             ),
+    [_R2] = LAYOUT_moonlander( \
+            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
+            KC_TRNS, _______, KC_F5  , KC_F4  , KC_F3  , KC_F11 , _______,   _______, _______, _______, _______, _______, _______, _______, \
+            KC_TRNS, _______, KC_F2  , KC_F1  , KC_F10 , KC_F9  , _______,   _______, _______, _______, _______, _______, _______, _______, \
+            KC_TRNS, _______, KC_F8  , KC_F7  , KC_F6  , KC_F12 ,                     _______, _______, _______, _______, _______, _______, \
+            KC_TRNS, _______, _______, _______, _______,          _______,   _______,          _______, _______, _______, _______, _______, \
+            _______, _______, _______,                     _______, _______, _______                             ),
 
-	[_CONTROL] = LAYOUT_moonlander( \
-			XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RGBETOG, \
-			XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-			XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-			XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-			XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          XXXXXXX,   XXXXXXX,          XXXXXXX, XXXXXXX, TD_CTRL, XXXXXXX, XXXXXXX, \
-			                           XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX                              ),
-
-	[_CONFIG] = LAYOUT_moonlander( \
-			XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX, RESET  , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-			XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-			XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RGBETOG, \
-			XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-			XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          XXXXXXX,   XXXXXXX,          XXXXXXX, XXXXXXX, TC_CTRL, XXXXXXX, XXXXXXX, \
-			                           XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX                              ),
+    [_CONTROL] = LAYOUT_moonlander( \
+            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RGBETOG, \
+            XXXXXXX, ON_BASE, ON_B1  , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          XXXXXXX,   XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+            XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX                              ),
+    [_CONFIG] = LAYOUT_moonlander( \
+            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RESET  , \
+            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          XXXXXXX,   XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+            XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX                              ),
 
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-	if (record->event.pressed) {
-		switch (keycode) {
-			case VRSN:
-				SEND_STRING (QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION);
-				return false;
-		}
-	}
-	switch (keycode) {
-		case ON_BASE:
-			if (record->event.pressed) {
-				layer_off(_CONTROL);
-				layer_off(_LOWER);
-				layer_off(_RAISE);
-				layer_off(_LAY1);
-        layer_on(_BASE);
-      }
-      return false;
-      break;
-    case ON_LAY1:
-      if (record->event.pressed) {
-        layer_off(_CONTROL);
-        layer_off(_LOWER);
-        layer_off(_RAISE);
-        layer_off(_BASE);
-        layer_on(_LAY1);
-      }
-      return false;
-      break;
-    case ON_CTRL:
-      if (record->event.pressed) {
-        layer_off(_LOWER);
-        layer_off(_RAISE);
-        layer_off(_LAY1);
-        layer_off(_BASE);
-        layer_on(_CONTROL);
-      }
-      return false;
-      break;
-  }
+    if (record->event.pressed) {
+        switch (keycode) {
+            case VRSN:
+                SEND_STRING (QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION);
+                return false;
+        }
+    }
+    switch (keycode) {
+        case ON_BASE:
+            if (record->event.pressed) {
+                layer_off(_CONFIG);
+                layer_off(_CONTROL);
+                layer_off(_R2);
+                layer_off(_L2);
+                layer_off(_R1);
+                layer_off(_L1);
+                layer_off(_B1);
+                layer_on(_BASE);
+            }
+            return false;
+            break;
+        case ON_B1:
+            if (record->event.pressed) {
+                layer_off(_CONFIG);
+                layer_off(_CONTROL);
+                layer_off(_R2);
+                layer_off(_L2);
+                layer_off(_R1);
+                layer_off(_L1);
+                layer_off(_BASE);
+                layer_on(_B1);
+            }
+            return false;
+            break;
+    }
 
-  #ifdef RGB_MATRIX_ENABLE
+#ifdef RGB_MATRIX_ENABLE
     if (!process_rgb_keycodes(keycode, record)) {
         return false;
     }
-  #endif
+#endif
 
-  return true;
+    return true;
 }
 
 
 layer_state_t layer_state_set_user(layer_state_t state) {
 
-  state = update_tri_layer_state(state, _LOWER, _RAISE, _FUNCTION);
+    state = update_tri_layer_state(state, _L1, _R1, _CONTROL);
+    state = update_tri_layer_state(state, _CONTROL, _R2, _CONFIG);
 
-  #ifdef RGB_MATRIX_ENABLE
+#ifdef RGB_MATRIX_ENABLE
     handle_layer_changes(state);
-  #endif
+#endif
 
-  return state;
+    return state;
 }
