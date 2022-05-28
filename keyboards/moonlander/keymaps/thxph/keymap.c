@@ -62,8 +62,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_R1] = LAYOUT_moonlander( \
             KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
-            TABLALT, _______, KC_LT  , KC_EQL , KC_GT  , KC_EXLM, _______,   _______, KC_AT  , KC_LBRC, KC_MINS, KC_RBRC, _______, KC_TRNS , \
-            ESCLCTL, _______, KC_LCBR, KC_QUOT, KC_RCBR, KC_HASH, _______,   _______, KC_UNDS, KC_LPRN, KC_DQT , KC_RPRN, _______, KC_TRNS, \
+            TABLALT, _______, KC_LT  , _______, KC_GT  , KC_EXLM, _______,   _______, KC_AT  , KC_LBRC, KC_MINS, KC_RBRC, _______, KC_TRNS , \
+            ESCLCTL, _______, KC_LCBR, KC_EQL , KC_RCBR, KC_HASH, _______,   _______, KC_UNDS, KC_LPRN, KC_DQT , KC_RPRN, _______, KC_TRNS, \
             KC_LSFT, KC_PERC, KC_EXLM, KC_PLUS, KC_TILD, KC_CIRC,                     KC_AMPR, KC_ASTR, KC_DLR , KC_PIPE, KC_BSLS, KC_TRNS, \
             KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS,   KC_TRNS,          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
             KC_TRNS, KC_TRNS, KC_TRNS,                     KC_TRNS, KC_TRNS, KC_TRNS                            ),
