@@ -42,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             ESCLCTL, KC_A   , KC_S   , KC_D   , KC_F   , KC_G   , _______,   _______, KC_H   , KC_J   , KC_K   , KC_L   , KC_SCLN, BSPCCTL, \
             KC_LSFT, MT_ZGUI, KC_X   , KC_C   , KC_V   , KC_B   ,                     KC_N   , KC_M   , KC_COMM, KC_DOT , SLSHGUI, KC_RSFT, \
             _______, _______, _______, TT_L2  , TT_L1  ,          _______,   _______,          TT_R1  , TT_R2  , _______, _______, _______, \
-            KC_SPC , _______, _______,                     _______, _______, KC_ENT                              ),
+                                                KC_SPC , _______, _______,   _______, _______, KC_ENT                                     ),
 
     [_B1] = LAYOUT_moonlander( \
             KC_TRNS, _______, _______, _______, _______, _______, _______,   _______, _______, _______, _______, _______, _______, _______, \
@@ -71,15 +71,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_L2] = LAYOUT_moonlander( \
             KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
             KC_TRNS, _______, KC_F5  , KC_F4  , KC_F3  , KC_F11 , _______,   _______, _______, _______, _______, _______, _______, _______, \
-            KC_TRNS, _______, KC_F2  , KC_F1  , KC_F10 , KC_F9  , _______,   _______, _______, _______, _______, _______, _______, _______, \
-            KC_TRNS, _______, KC_F8  , KC_F7  , KC_F6  , KC_F12 ,                     _______, _______, _______, _______, _______, _______, \
+            KC_TRNS, _______, KC_F2  , KC_F1  , KC_F10 , KC_F9  , _______,   _______, _______, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, _______, \
+            KC_TRNS, _______, KC_F8  , KC_F7  , KC_F6  , KC_F12 ,                     _______, KC_RCTL, KC_RALT, KC_RGUI, KC_RSFT, _______, \
             KC_TRNS, _______, _______, _______, _______,          _______,   _______,          _______, _______, _______, _______, _______, \
             _______, _______, _______,                     _______, _______, _______                             ),
     [_R2] = LAYOUT_moonlander( \
             KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
-            KC_TRNS, _______, KC_F5  , KC_F4  , KC_F3  , KC_F11 , _______,   _______, _______, _______, _______, _______, _______, _______, \
-            KC_TRNS, _______, KC_F2  , KC_F1  , KC_F10 , KC_F9  , _______,   _______, _______, _______, _______, _______, _______, _______, \
-            KC_TRNS, _______, KC_F8  , KC_F7  , KC_F6  , KC_F12 ,                     _______, _______, _______, _______, _______, _______, \
+            KC_TRNS, _______, _______, _______, _______, _______, _______,   _______, _______, _______, _______, _______, _______, _______, \
+            KC_TRNS, KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL, _______, _______,   _______, _______, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, _______, \
+            KC_TRNS, KC_RSFT, KC_RGUI, KC_RALT, KC_RCTL, _______,                     _______, KC_RCTL, KC_RALT, KC_RGUI, KC_RSFT, _______, \
             KC_TRNS, _______, _______, _______, _______,          _______,   _______,          _______, _______, _______, _______, _______, \
             _______, _______, _______,                     _______, _______, _______                             ),
 
