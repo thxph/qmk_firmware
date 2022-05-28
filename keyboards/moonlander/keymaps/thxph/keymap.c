@@ -25,7 +25,7 @@
 #include "keymap.h"
 
 #ifdef RGB_MATRIX_ENABLE
-#  include "rgb_underglow.h"
+#  include "rgb.h"
 #endif
 
 
@@ -41,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             TABLALT, KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   , _______,   _______, KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , QUOTALT, \
             ESCLCTL, KC_A   , KC_S   , KC_D   , KC_F   , KC_G   , _______,   _______, KC_H   , KC_J   , KC_K   , KC_L   , KC_SCLN, BSPCCTL, \
             KC_LSFT, MT_ZGUI, KC_X   , KC_C   , KC_V   , KC_B   ,                     KC_N   , KC_M   , KC_COMM, KC_DOT , SLSHGUI, KC_RSFT, \
-            _______, _______, _______, TT_L2  , TT_L1  ,          _______,   _______,          TT_R1  , _______, _______, _______, _______, \
+            _______, _______, _______, TT_L2  , TT_L1  ,          _______,   _______,          TT_R1  , TT_R2  , _______, _______, _______, \
             KC_SPC , _______, _______,                     _______, _______, KC_ENT                              ),
 
     [_B1] = LAYOUT_moonlander( \
@@ -86,17 +86,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_CONTROL] = LAYOUT_moonlander( \
             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RGBETOG, \
-            XXXXXXX, ON_BASE, ON_B1  , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+            XXXXXXX, DF(_BASE), DF(_B1), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          XXXXXXX,   XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-            XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX                              ),
+            _______, _______, _______, _______, _______,          _______,   _______,          _______, _______, _______, _______, _______, \
+            _______, _______, _______,                     _______, _______, _______                             ),
     [_CONFIG] = LAYOUT_moonlander( \
             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RESET  , \
             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
             XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          XXXXXXX,   XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-            XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX                              ),
+            _______, _______, _______, _______, _______,          _______,   _______,          _______, _______, _______, _______, _______, \
+            _______, _______, _______,                     _______, _______, _______                             ),
 
 };
 
@@ -108,35 +108,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 return false;
         }
     }
-    switch (keycode) {
-        case ON_BASE:
-            if (record->event.pressed) {
-                layer_off(_CONFIG);
-                layer_off(_CONTROL);
-                layer_off(_R2);
-                layer_off(_L2);
-                layer_off(_R1);
-                layer_off(_L1);
-                layer_off(_B1);
-                layer_on(_BASE);
-            }
-            return false;
-            break;
-        case ON_B1:
-            if (record->event.pressed) {
-                layer_off(_CONFIG);
-                layer_off(_CONTROL);
-                layer_off(_R2);
-                layer_off(_L2);
-                layer_off(_R1);
-                layer_off(_L1);
-                layer_off(_BASE);
-                layer_on(_B1);
-            }
-            return false;
-            break;
-    }
-
+//   switch (keycode) {
+//       case ON_BASE:
+//           if (record->event.pressed) {
+//               DF(_BASE);
+//           }
+//           return false;
+//           break;
+//       case ON_B1:
+//           if (record->event.pressed) {
+//               DF(_B1);
+//           }
+//           return false;
+//           break;
+//   }
 #ifdef RGB_MATRIX_ENABLE
     if (!process_rgb_keycodes(keycode, record)) {
         return false;

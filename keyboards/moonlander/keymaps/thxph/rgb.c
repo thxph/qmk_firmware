@@ -1,4 +1,4 @@
-#include "rgb_underglow.h"
+#include "rgb.h"
 
 void handle_layer_changes(layer_state_t state) {
   switch (get_highest_layer(state)) {
