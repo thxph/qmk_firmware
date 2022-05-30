@@ -4,32 +4,23 @@
 #include "thxph.h"
 
 #define _BASE 0
-#define _LAY1 1
-#define _LOWER 2
-#define _RAISE 3
-#define _FUNCTION 4
+#define _B1 1
+#define _L1 2
+#define _R1 3
+#define _L2 4
+#define _R2 5
 #define _CONTROL 9
 #define _CONFIG 15
 
-#define MO_LOWR MO(_LOWER)
-#define MO_RAIS MO(_RAISE)
-#define MO_CTRL MO(_CONTROL)
-
-#define TT_LOWR TT(_LOWER)
-#define TT_RAIS TT(_RAISE)
-
-#define TG_LAY1 TG(_LAY1)
-#define TG_LOWR TG(_LOWER)
-#define TG_RAIS TG(_RAISE)
-#define TG_CTRL TG(_CONTROL)
-
-#define TD_CTRL TD(T_CTRL)
+#define TT_L1 TT(_L1)
+#define TT_L2 TT(_L2)
+#define TT_R1 TT(_R1)
+#define TT_R2 TT(_R2)
 
 
 enum custom_keycodes {
   ON_BASE = SAFE_RANGE,
-  ON_LAY1,
-  ON_CTRL,
+  ON_B1,
 
   RGBETOG,
   RGBEMOD

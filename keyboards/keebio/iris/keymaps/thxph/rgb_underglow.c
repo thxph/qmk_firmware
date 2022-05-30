@@ -2,30 +2,39 @@
 
 void handle_layer_changes(layer_state_t state) {
   switch (get_highest_layer(state)) {
+    case _CONFIG:
+        rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING+1);
+        rgblight_sethsv_noeeprom(HSV_WHITE);
+        break;
     case _CONTROL:
-      rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING+2);
-      rgblight_sethsv_noeeprom(HSV_WHITE);
-      break;
-    case _RAISE:
-      rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING+2);
-      rgblight_sethsv_noeeprom(HSV_GREEN);
-      break;
-    case _LOWER:
-      rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING+2);
-      rgblight_sethsv_noeeprom(HSV_RED);
-      break;
-    case _LAY1:
-      rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING+1);
-      rgblight_sethsv_noeeprom(HSV_AZURE);
-      break;
-    case _FUNCTION:
-      rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING+1);
-      rgblight_sethsv_noeeprom(HSV_GOLDENROD);
-      break;
+        rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING+1);
+        rgblight_sethsv_noeeprom(HSV_CORAL);
+        break;
+    case _R2:
+        rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING+1);
+        rgblight_sethsv_noeeprom(HSV_TEAL);
+        break;
+    case _L2:
+        rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING+1);
+        rgblight_sethsv_noeeprom(HSV_ORANGE);
+        break;
+    case _R1:
+        rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING+1);
+        rgblight_sethsv_noeeprom(HSV_SPRINGGREEN);
+        break;
+    case _L1:
+        rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING+1);
+        rgblight_sethsv_noeeprom(HSV_GOLDENROD);
+        break;
+    case _B1:
+        rgblight_sethsv_noeeprom(HSV_RED);
+        rgblight_mode_noeeprom(RGBLIGHT_MODE_RAINBOW_SWIRL+4);
+        break;
     case _BASE:
-      rgblight_sethsv_noeeprom(HSV_BLUE);
-      rgblight_mode_noeeprom(RGBLIGHT_MODE_RAINBOW_SWIRL+4);
-      break;
+        rgblight_sethsv_noeeprom(HSV_RED);
+        rgblight_mode_noeeprom(RGBLIGHT_MODE_RAINBOW_SWIRL+4);
+        break;
+
   }
 }
 
