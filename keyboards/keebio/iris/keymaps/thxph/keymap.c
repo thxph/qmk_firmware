@@ -1,10 +1,7 @@
 #include QMK_KEYBOARD_H
 #include "thxph.h"
 #include "keymap.h"
-
-#ifdef RGBLIGHT_ENABLE
-#  include "rgb_underglow.h"
-#endif
+#include "rgb_underglow.h"
 
 #ifdef TAP_DANCE_ENABLE
 #  include "tap_dances.h"
@@ -18,21 +15,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_GRV , KC_1   , KC_2   , KC_3   , KC_4   , KC_5   ,                    KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , KC_MINS, \
         TABLALT, KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   ,                    KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , QUOTALT, \
         ESCLCTL, KC_A   , KC_S   , KC_D   , KC_F   , KC_G   ,                    KC_H   , KC_J   , KC_K   , KC_L   , KC_SCLN, BSPCCTL, \
-        KC_LSFT, MT_ZGUI, KC_X   , KC_C   , KC_V   , KC_B   , _______,  _______, KC_N   , KC_M   , KC_COMM, KC_DOT , SLSHGUI, KC_RSFT, \
+        KC_LSFT, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , _______,  _______, KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, KC_RSFT, \
         /*                               */ TT_L2  , TT_L1  , KC_SPC ,  KC_ENT , TT_R1  , TT_R2 /*                                  */ ),
 
     [_B1] = LAYOUT( \
         _______, _______, _______, _______, _______, _______,                    _______, _______, _______, _______, _______, _______, \
         _______, _______, _______, _______, _______, _______,                    _______, _______, _______, _______, _______, _______, \
         _______, _______, _______, _______, _______, _______,                    _______, _______, _______, _______, _______, _______, \
-        _______, KC_Z   , _______, _______, _______, _______, _______,  _______, _______, _______, _______, _______, KC_SLSH, _______, \
+        KC_LSFT, MT_ZGUI, KC_X   , KC_C   , KC_V   , KC_B   , _______,  _______, KC_N   , KC_M   , KC_COMM, KC_DOT , SLSHGUI, KC_RSFT, \
         /*                               */ _______, _______, _______,  _______, _______, _______  /*                               */ ),
 
     [_L1] = LAYOUT( \
         _______, _______, _______, _______, _______, _______,                    _______, _______, _______, _______, _______, _______, \
-        _______, KC_LALT, KC_5   , KC_4   , KC_3   , _______,                    KC_PGUP, KC_HOME, KC_END , KC_PGDN, KC_INS , _______ ,\
-        _______, KC_LCTL, KC_2   , KC_1   , KC_0   , KC_9   ,                    KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, KC_DEL , _______, \
-        _______, KC_LGUI, KC_8   , KC_7   , KC_6   , _______, _______,  _______, _______, _______, _______, _______, _______, _______, \
+        _______, _______, KC_5   , KC_4   , KC_3   , _______,                    KC_PGUP, KC_HOME, KC_END , KC_PGDN, KC_INS , _______ ,\
+        _______, KC_LGUI, KC_2   , KC_1   , KC_0   , KC_9   ,                    KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, KC_DEL , _______, \
+        _______, KC_LALT, KC_8   , KC_7   , KC_6   , _______, _______,  _______, _______, _______, _______, _______, _______, _______, \
                                             _______, _______, _______,  _______, _______, _______                                      ),
 
     [_R1] = LAYOUT( \
@@ -64,8 +61,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                             _______, _______, _______,  _______, _______, _______                                      ),
 
     [_CONFIG] = LAYOUT( \
-        XXXXXXX, XXXXXXX  , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-        XXXXXXX, RGBETOG  , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RESET  , \
+        EE_CLR , XXXXXXX  , RGBESPD, RGBESPI, RGBEMOD, RGBETOG,                    RGBETOG, RGBEMOD, XXXXXXX, XXXXXXX, XXXXXXX, EE_CLR, \
+        QK_BOOT, RGBETOG  , RGBPSPD, RGBPSPI, RGB_MOD, RGB_TOG,                    RGB_TOG, RGB_MOD, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT, \
         XXXXXXX, DF(_BASE), DF(_B1), XXXXXXX, XXXXXXX, XXXXXXX,                    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
         XXXXXXX, XXXXXXX  , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
                                               _______, _______, _______,  _______, _______, _______                                      ),
@@ -75,11 +72,45 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
-  #ifdef RGBLIGHT_ENABLE
-    if (!process_rgb_keycodes(keycode, record)) {
-        return false;
-    }
-  #endif
+     switch (keycode) {
+    case RGBETOG:
+      if (record->event.pressed) {
+        rgblight_toggle_noeeprom();
+      }
+      return false;
+      break;
+    case RGBEMOD:
+      if (record->event.pressed) {
+        rgblight_step_noeeprom();
+      }
+      return false;
+      break;
+    case RGBESPI:
+      if (record->event.pressed) {
+        rgblight_increase_speed_noeeprom();
+      }
+      return false;
+      break;
+    case RGBESPD:
+      if (record->event.pressed) {
+        rgblight_decrease_speed_noeeprom();
+      }
+      return false;
+      break;
+    case RGBPSPI:
+      if (record->event.pressed) {
+        rgblight_increase_speed();
+      }
+      return false;
+      break;
+    case RGBPSPD:
+      if (record->event.pressed) {
+        rgblight_decrease_speed();
+      }
+      return false;
+      break;
+  }
+
 
   return true;
 }
@@ -88,6 +119,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 layer_state_t layer_state_set_user(layer_state_t state) {
 
   state = update_tri_layer_state(state, _L1, _R1, _CONTROL);
+  state = update_tri_layer_state(state, _L1, _L2, _CONFIG);
+  state = update_tri_layer_state(state, _R1, _R2, _CONFIG);
   state = update_tri_layer_state(state, _CONTROL, _R2, _CONFIG);
 
   #ifdef RGBLIGHT_ENABLE
@@ -153,3 +186,4 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     }
     return false;
 }
+

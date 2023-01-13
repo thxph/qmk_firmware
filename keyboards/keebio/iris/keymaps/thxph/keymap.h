@@ -23,6 +23,10 @@ enum custom_keycodes {
   ON_B1,
 
   RGBETOG,
-  RGBEMOD
+  RGBEMOD,
+  RGBESPI,
+  RGBPSPI,
+  RGBESPD,
+  RGBPSPD
 
 };
