@@ -1,0 +1,21 @@
+name: Build QMK Firmware for keebio iris v7
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-iris-v7:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: d3adb5/build-qmk-fw@v1
+        with:
+          keyboard: keebio/iris/rev7
+          keymap: thxph
